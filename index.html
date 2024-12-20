@@ -126,6 +126,7 @@
         }
     </style>
     <script>
+        const timestamp = Date.now();
         fetch('data.json')
             .then(response => response.json())
             .then(data => {
@@ -170,7 +171,7 @@
 
                 dayDiv.innerHTML = `
                     <div class="image-container">
-                        <img src="${imagePath}" alt="Daily image" />
+                        <img src="${imagePath}?t=${timestamp}" alt="Daily image" />
                     </div>
                     <div class="date">${currentDate.toLocaleString('default', {month: 'long'})} <span class="num">${currentDate.getDate()}</span></div>
                     <div class="txt">
